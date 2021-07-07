@@ -121,6 +121,7 @@ const server = new ApolloServer({
   subscriptions: {
     path: "/subscriptions",
     onConnect: (connectionParams) => {
+      console.log("connection params", connectionParams);
       if (connectionParams && connectionParams.authorization) {
         const token = connectionParams.authorization;
         if (token) {
